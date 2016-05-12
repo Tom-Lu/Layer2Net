@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{703D5869-5914-4FC7-B347-8DAC53F602B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Layer2Net.Workshop</RootNamespace>
+    <AssemblyName>Layer2Net.Workshop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PcapDotNet.Base">
+      <HintPath>..\PcapDotNet\PcapDotNet.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core, Version=1.0.3.20978, Culture=neutral, PublicKeyToken=4b6f3e583145a652, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PcapDotNet\PcapDotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core.Extensions">
+      <HintPath>..\PcapDotNet\PcapDotNet.Core.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Packets">
+      <HintPath>..\PcapDotNet\PcapDotNet.Packets.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TcpSessionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TcpSessionPanel.Designer.cs">
+      <DependentUpon>TcpSessionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdapterControlPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdapterControlPanel.Designer.cs">
+      <DependentUpon>AdapterControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdapterProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdapterProperties.Designer.cs">
+      <DependentUpon>AdapterProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkshopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkshopForm.Designer.cs">
+      <DependentUpon>WorkshopForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TcpSessionPanel.resx">
+      <DependentUpon>TcpSessionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdapterControlPanel.resx">
+      <DependentUpon>AdapterControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdapterProperties.resx">
+      <DependentUpon>AdapterProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkshopForm.resx">
+      <DependentUpon>WorkshopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icon_adapter.png" />
+    <Content Include="Resources\icon_netservice.png" />
+    <Content Include="Resources\icon_new.png" />
+    <Content Include="Resources\icon_restart.png" />
+    <None Include="Resources\icon_stop.png" />
+    <None Include="Resources\icon_save.png" />
+    <None Include="Resources\icon_run.png" />
+    <None Include="Resources\icon_remove_adapter.png" />
+    <None Include="Resources\icon_open.png" />
+    <None Include="Resources\icon_add_adapter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Layer2Net\Layer2Net.csproj">
+      <Project>{06859EBC-6AAE-4EA7-8A9F-E0A371EC8C8A}</Project>
+      <Name>Layer2Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
